@@ -2,22 +2,31 @@
 <html lang="en">
    <head>
       <title>Guia de perguntas</title>
-      <link rel="stylesheet" href="/css/style.css">
       <link rel="stylesheet" href="/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/css/style.css">
    </head>
    <body>
       <div class="container">
-          <h3>Realizar perguntas</h3>
+         <div class="card">
+            <div class="card-header">
+               <h3>Realizar perguntas</h3>     
+            </div>
+            <div class="card-body">
+               <form>
+                  <label>Titulo</label>
+                  <input type="text" placeholder="Título" class="form-control">
+                  <br>
+                  <label>Descrição</label>
+                  <textarea placeholder="Descrição da pergunta aqui" class="form-control"></textarea>
+                  <br>
+                  <button class="btn btn-success">Perguntar</button>
+                </form>
+            </div>
+         </div>
+
+
+          
           <hr>
-          <form>
-            <label>Titulo</label>
-            <input type="text" placeholder="Título" class="form-control">
-            <br>
-            <label>Descrição</label>
-            <textarea placeholder="Descrição da pergunta aqui" class="form-control"></textarea>
-            <br>
-            <button class="btn btn-success">Perguntar</button>
-          </form>
       </div>
    </body>
    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
