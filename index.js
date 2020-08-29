@@ -1,6 +1,18 @@
+// Importacoes
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const connection = require("./database/database")
+
+// Database
+connection
+    .authenticate()
+    .then(()=>{
+        console.log("Banco de dados conectado com sucesso")
+    })
+    .catch((msgErro)=>{
+        console.log(msgErro);
+    })
 
 // Informo o Express o ejs como view engine
 app.set('view engine', 'ejs')
