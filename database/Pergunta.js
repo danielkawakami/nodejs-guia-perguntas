@@ -14,3 +14,5 @@ const Pergunta = connection.define('Pergunta', {
 })
 
 Pergunta.sync({force: false}).then(()=>{})
+
+module.exports = Pergunta
