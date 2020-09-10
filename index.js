@@ -24,7 +24,9 @@ app.use(bodyParser.json())
 
 // Rotas
 app.get("/", (req, res)=>{
-    Pergunta.findAll({raw: true}).then(perguntas=>{
+    Pergunta.findAll({raw: true, order:[
+        ['titulo', 'ASC']
+    ]}).then(perguntas=>{
         res.render("index", {perguntas})
         console.log(perguntas)
     })
@@ -43,6 +45,19 @@ app.post("/salvarpergunta", (req, res)=>{
         descricao: descricao
     }).then(()=> {
         res.redirect('/')
+    })
+})
+
+app.get("/pergunta/:id", (req, res)=>{
+    var id = req.params.id
+    Pergunta.findOne({
+        where: {id: id}
+    }).then(pergunta=>{
+        if(pergunta != undefined) {
+            res.render("pergunta")
+        } else {
+            res.redirect("/")
+        }
     })
 })
 

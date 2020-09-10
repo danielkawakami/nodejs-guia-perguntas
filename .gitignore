@@ -1,2 +1,5 @@
 /node_modules
 package-lock.json
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json
+.vs/nodejs-guia-perguntas/v16/.suo
