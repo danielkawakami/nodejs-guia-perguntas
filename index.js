@@ -4,6 +4,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const connection = require("./database/database")
 const Pergunta = require('./database/Pergunta')
+const Resposta = require('./database/Resposta')
 
 // Database
 connection
@@ -54,7 +55,9 @@ app.get("/pergunta/:id", (req, res)=>{
         where: {id: id}
     }).then(pergunta=>{
         if(pergunta != undefined) {
-            res.render("pergunta")
+            res.render("pergunta", {
+                pergunta: pergunta
+            })
         } else {
             res.redirect("/")
         }
